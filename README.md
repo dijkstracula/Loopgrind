@@ -1,4 +1,4 @@
-Loopgrind - Eventloop dynamic analysis tool 
+Loopgrind - an event loop analyzer
 =========
 
 Overview
@@ -22,6 +22,11 @@ For more detailed information, please see the project writeup, 538w-project-pape
 
 Installation and Setup
 ----------
+
+Loopgrind is a plugin for the Valgrind dynamic analysis framework.  Download the Valgrind source, and copy the loopgrind/ directory into your Valgrind root directory.  You will have to change the build scripts so they know about Loopgrind:
+
+1. In configure.am, add loopgrind to TOOLS.
+2. In configure.in, add loopgrind/Makefile, loopgrind/docs/Makefile, and loopgrind/tests/Makefile to the AC_OUTPUT list.
 
 Loopgrind requires a semi-modern ia32 Linux system.  While Valgrind
 may be compiled under OSX, the analysis script scrapes output
